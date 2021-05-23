@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2466D926265A9E7400AE08D9 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2466D925265A9E7400AE08D9 /* AboutView.swift */; };
 		2491222D26470CB6003EBFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2491222C26470CB6003EBFE3 /* AppDelegate.swift */; };
 		2491222F26470CB6003EBFE3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2491222E26470CB6003EBFE3 /* SceneDelegate.swift */; };
 		2491223126470CB6003EBFE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2491223026470CB6003EBFE3 /* ContentView.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2466D925265A9E7400AE08D9 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		2491222926470CB6003EBFE3 /* SwiftUIBulleyeV1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBulleyeV1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2491222C26470CB6003EBFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2491222E26470CB6003EBFE3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				2491222C26470CB6003EBFE3 /* AppDelegate.swift */,
 				2491222E26470CB6003EBFE3 /* SceneDelegate.swift */,
 				2491223026470CB6003EBFE3 /* ContentView.swift */,
+				2466D925265A9E7400AE08D9 /* AboutView.swift */,
 				2491223226470CB8003EBFE3 /* Assets.xcassets */,
 				2491223726470CB8003EBFE3 /* LaunchScreen.storyboard */,
 				2491223A26470CB8003EBFE3 /* Info.plist */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2466D926265A9E7400AE08D9 /* AboutView.swift in Sources */,
 				2491222D26470CB6003EBFE3 /* AppDelegate.swift in Sources */,
 				2491222F26470CB6003EBFE3 /* SceneDelegate.swift in Sources */,
 				2491223126470CB6003EBFE3 /* ContentView.swift in Sources */,

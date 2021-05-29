@@ -2,33 +2,10 @@
 //  AboutView.swift
 //  SwiftUIBulleyeV1
 //
-//  Created by 황선애 on 2021/05/23.
+//  Created by 황선애 on 2021/05/29.
 //
 
-// View modifiers
-// ============
-struct AboutHeadingStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(Font.custom("Arial Rounded MT Bold", size: 30))
-            .foregroundColor(Color.black)
-            .padding(.top, 20)
-            .padding(.bottom, 20)
-    }
-}
-struct AboutBodyStyle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .font(Font.custom("Arial Rounded MT Bold", size: 16))
-            .foregroundColor(Color.black)
-            .padding(.leading, 60)
-            .padding(.trailing, 60)
-            .padding(.bottom, 20)
-    }
-}
-
 import SwiftUI
-
 
 struct AboutView: View {
     // Constants
@@ -47,12 +24,36 @@ struct AboutView: View {
             } // End of VStack
             .background(beige)
         } // End of Group
-        .background(Image("BackGround"))
+        .background(Image("Background"))
     }
 }
 
 struct AboutView_Previews: PreviewProvider {
     static var previews: some View {
         AboutView()
+    }
+}
+
+
+// View Modifiers
+// ==================
+struct AboutHeadingStyle: ViewModifier{
+    func body(content: Content) -> some View{
+        content
+            .font(Font.custom("Arial Rounded MT Bold",size: 30))
+            .foregroundColor(Color.black)
+            .padding(.top, 20)
+            .padding(.bottom, 20)
+    }
+}
+
+struct AboutBodyStyle: ViewModifier{
+    func body(content: Content) -> some View{
+        content
+            .font(Font.custom("Arial Rounded MT Bold",size: 16))
+            .foregroundColor(Color.black)
+            .padding(.leading, 60)
+            .padding(.trailing, 60)
+            .padding(.bottom, 20)
     }
 }

@@ -13,7 +13,7 @@
 		2491223326470CB8003EBFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2491223226470CB8003EBFE3 /* Assets.xcassets */; };
 		2491223626470CB8003EBFE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2491223526470CB8003EBFE3 /* Preview Assets.xcassets */; };
 		2491223926470CB8003EBFE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2491223726470CB8003EBFE3 /* LaunchScreen.storyboard */; };
-		24AE247D26624A9D00BECA7E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AE247C26624A9D00BECA7E /* AboutView.swift */; };
+		24AE247B2662436300BECA7E /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AE247A2662436300BECA7E /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		2491223526470CB8003EBFE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2491223826470CB8003EBFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2491223A26470CB8003EBFE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		24AE247C26624A9D00BECA7E /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		24AE247A2662436300BECA7E /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 				2491223726470CB8003EBFE3 /* LaunchScreen.storyboard */,
 				2491223A26470CB8003EBFE3 /* Info.plist */,
 				2491223426470CB8003EBFE3 /* Preview Content */,
-				24AE247C26624A9D00BECA7E /* AboutView.swift */,
+				24AE247A2662436300BECA7E /* AboutView.swift */,
 			);
 			path = SwiftUIBulleyeV1;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24AE247D26624A9D00BECA7E /* AboutView.swift in Sources */,
+				24AE247B2662436300BECA7E /* AboutView.swift in Sources */,
 				2491222D26470CB6003EBFE3 /* AppDelegate.swift in Sources */,
 				2491222F26470CB6003EBFE3 /* SceneDelegate.swift in Sources */,
 				2491223126470CB6003EBFE3 /* ContentView.swift in Sources */,

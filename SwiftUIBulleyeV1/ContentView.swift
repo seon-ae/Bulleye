@@ -11,6 +11,11 @@ struct ContentView: View {
     // Properties
     // =============
     
+    // Colors
+    let midnightBlue = Color(red: 0, green: 0.2, blue: 0.4)
+    
+    // Game starts
+    
     
     // stage for User Interface views
     @State var alertIsVisible = false
@@ -24,62 +29,92 @@ struct ContentView: View {
         abs(self.sliderValueRounded - self.target)
     }
     var body: some View {
-        VStack{
-            Spacer()
-            HStack {
-                Text("Put the bull eye as close as you can do:")
-                Text("\(self.target)")
-            }
-            Spacer()
-            // Slider row
-            HStack {
-                Text("1")
-                Slider(value: self.$sliderValue, in :1...100)
-                Text("100")
-            }
-            Spacer()
-            // Button row
-            Button( action:{
-                //print("Button pressed")
-                print(" Points awarded: \(self.pointsForCurrentRound())")
-                self.alertIsVisible = true
-                
-            }) {
-                Text("Hit me!")
-            }
-            // State for alert
-            .alert(isPresented: self.$alertIsVisible) {
-                Alert(title: Text(alertTitle()),
-                      message: Text(scoringMessage()),
-                      dismissButton: .default(Text("Awesome!"))
-                      {
-                        self.startNewRound()
-                      })
-                } // End of .alert()
-            Spacer()
-            // Score row
-            // TODO: Add view for the score, rounds, start over and and info button
-            HStack {
-                Button(action:{
-                    self.startNewGame()
-                }){
-                    Text("Start Over")
+        NavigationView{
+            VStack{
+                Spacer()
+                // Target row
+                HStack {
+                    Text("Put the bull eye as close as you can do:")
+                        .modifier(LabelStyle())
+                    Text("\(self.target)")
+                        .font(Font.custom("Arial Rounded MT Bold",size:24))
+                        .foregroundColor(Color.yellow)
+                        .modifier(ValueStyle())
                 }
                 Spacer()
-                Text("Score:")
-                Text("\(score)")
-                Spacer()
-                Text("Round:")
-                Text("\(round)")
-                Spacer()
-                Button(action:{}){
-                    Text("Inform")
+                // Slider row
+                HStack {
+                    Text("1")
+                        .modifier(LabelStyle())
+                    Slider(value: $sliderValue, in :1...100)
+                        .accentColor(Color.green)
+                    Text("100")
+                        .modifier(LabelStyle())
                 }
-            }.padding(.bottom,20)
-        } // End of Vstack
-        .onAppear(){
-            self.startNewGame()
-        }
+                Spacer()
+                // Button row
+                Button( action:{
+                    //print("Button pressed")
+                    print(" Points awarded: \(self.pointsForCurrentRound())")
+                    self.alertIsVisible = true
+                    
+                }) {
+                    Text("Hit me!").modifier(ButtonLargeTextStyle())
+                }
+                .background(Image("Button"))
+                .modifier(Shadow())
+                //.shadow(color: Color.black, radius: 5,x: 2, y: 2)
+                // State for alert
+                .alert(isPresented: self.$alertIsVisible) {
+                    Alert(title: Text(alertTitle()),
+                          message: Text(scoringMessage()),
+                          dismissButton: .default(Text("Awesome!"))
+                          {
+                            self.startNewRound()
+                          })
+                    } // End of .alert()
+                Spacer()
+                // Score row
+                // TODO: Add view for the score, rounds, start over and and info button
+                HStack {
+                    Button(action:{
+                        self.startNewGame()
+                    }){
+                        HStack {
+                            Image("StartOverIcon")
+                            Text("Start Over").modifier(ButtonSmallTextStyle())
+                        }
+                    }
+                    .background(Image("Button")
+                    .modifier(Shadow()))
+                    Spacer()
+                    Text("Score:")
+                        .modifier(LabelStyle())
+                    Text("\(score)")
+                        .modifier(ValueStyle())
+                    Spacer()
+                    Text("Round:")
+                        .modifier(LabelStyle())
+                    Text("\(round)")
+                        .modifier(ValueStyle())
+                    Spacer()
+                    //Button(action:{}){
+                    NavigationLink(destination: AboutView()) {
+                        HStack{
+                            Image("InfoIcon")
+                            Text("Info").modifier(ButtonSmallTextStyle())
+                        }
+                    }
+                    .background(Image("Button")
+                                    .modifier(Shadow()))
+                }.padding(.bottom,20)
+                .accentColor(midnightBlue)
+            } // End of Vstack
+            .onAppear(){
+                self.startNewGame() }
+            .background(Image("Background"))
+        } // End of NavigationView
+        .navigationViewStyle(StackNavigationViewStyle())
     } // End of body
     
     // Methods
@@ -138,6 +173,49 @@ struct ContentView: View {
     }
 } // End of struct
 
+// View modifiers
+struct LabelStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(Font.custom("Arial Rounded MT Bold",size:18))
+            .foregroundColor(Color.white)
+            .shadow(color: Color.black, radius: 5,x: 2, y: 2)
+    }
+}
+struct ValueStyle: ViewModifier {
+    func body(content: Content) -> some View{
+        content
+            .font(Font.custom("Arial Rounded MT Bold",size:24))
+            .foregroundColor(Color.yellow)
+            .shadow(color: Color.black, radius: 5,x: 2, y: 2)
+    }
+}
+
+// Shadow
+struct Shadow: ViewModifier{
+    func body(content: Content) -> some View{
+        content
+            .shadow(color: Color.black, radius: 5, x: 2, y: 2)
+    }
+}
+
+// For the Hit me! button
+struct ButtonLargeTextStyle: ViewModifier{
+    func body(content: Content) -> some View{
+        content
+            .font(Font.custom("Arial Rounded MT Bold", size: 18))
+            .foregroundColor(Color.black)
+    }
+}
+
+// For the Start over and Info buttons
+struct ButtonSmallTextStyle: ViewModifier{
+    func body(content: Content) -> some View{
+        content
+            .font(Font.custom("Arial Rounded MT Bold", size: 12))
+            .foregroundColor(Color.black)
+    }
+}
 
 // Preview
 // ==============
